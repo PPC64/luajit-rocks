@@ -29,9 +29,9 @@ IF(WIN32)
 ELSE()
   SET(INSTALL_BIN_SUBDIR "bin" CACHE STRING "installation executable subdirectory name")
   SET(INSTALL_LIB_SUBDIR "lib" CACHE STRING "installation library subdirectory name")
-  SET(INSTALL_LUA_PATH_SUBDIR "share/lua/5.1") # not editable
+  SET(INSTALL_LUA_PATH_SUBDIR "share/lua/5.1/" CACHE STRING "lua path subdirectory name")
   SET(INSTALL_LUA_LIB_SUBDIR "lib" CACHE STRING "installation lua lib subdirectory name")
-  SET(INSTALL_LUA_CPATH_SUBDIR "${INSTALL_LUA_LIB_SUBDIR}/lua/5.1") # not editable
+  SET(INSTALL_LUA_CPATH_SUBDIR "${INSTALL_LUA_LIB_SUBDIR}/lua/5.1/" CACHE STRING "lua cpath subdirectory name")
 ENDIF()
 
 ADD_DEFINITIONS(-DLUA_MULTILIB="${INSTALL_LUA_LIB_SUBDIR}")
@@ -201,7 +201,7 @@ int main() { return 0; }
 ENDMACRO()
 
 SET(CMAKE_REQUIRED_INCLUDES ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/src)
-FOREACH(arch X64 X86 ARM PPC PPCSPE MIPS)
+FOREACH(arch X64 X86 ARM ARM64 PPC PPCSPE MIPS)
   LJ_TEST_ARCH(LJ_TARGET_${arch})
   if(LJ_TARGET_${arch})
     STRING(TOLOWER ${arch} TARGET_LJARCH)

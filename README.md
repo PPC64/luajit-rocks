@@ -6,16 +6,16 @@ CMake-based LuaJIT + Luarocks
 We want to provide an easy to way to users for installing _recent_ versions
 of LuaJIT (or Lua) and luarocks, with almost no efforts.
 
-The provided LuaJIT (or Lua) and luarocks point on their respective git
+The provided LuaJIT (or Lua) and luarocks point to their respective git
 repository. We did not make any changes, except the compilation and
-installation process.
+installation processes.
 
 In addition,
-  - Luarocks (or Lua) will be installed at the same location than LuaJIT and will know
+  - Luarocks (or Lua) will be installed at the same location as LuaJIT and will know
     about LuaJIT shared library location (mandatory for Windows installs). It will
     also not be confused if you have several LuaJIT+luarocks at different locations.
 
-  - Luarocks will come installed with [Torch rocks repository](http://torch.github.io/rocks.html).
+  - Luarocks will come installed with [Torch rocks repository](http://htmlpreview.github.io/?https://github.com/torch/rocks/blob/master/index.html)
   
   - Luarocks comes with mandatory system command line tools under Windows.
 
